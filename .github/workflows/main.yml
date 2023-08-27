@@ -7,7 +7,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-        - uses: actions/checkout@dev
+        - uses: actions/checkout@v3
         - name: Use Node.js 16.18.1
           uses: actions/setup-node@v2
           with:
