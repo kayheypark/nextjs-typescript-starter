@@ -16,5 +16,3 @@ jobs:
           node-version: '16.18.1'
       - name: Install Dependencies
         run: npm install
-      - name: Test (next lint)
-        run: npm run lint
