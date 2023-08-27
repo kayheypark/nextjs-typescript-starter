@@ -23,6 +23,6 @@ jobs:
           with:
             target-server: ${{ secrets.FTP_HOST }}
             remote-user: ${{ secrets.FTP_USERNAME }}
-            private-ssh-key: ${{ secrets.REMOTE_SSH_KEY }}
+            private-ssh-key: ${{ secrets.SSH_KEY }}
             destination-path: ${{ secrets.FTP_SERVERDIR }}
             ssh-port: ${{ secrets.FTP_PORT }}
