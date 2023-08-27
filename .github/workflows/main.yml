@@ -19,12 +19,11 @@ jobs:
         - name: Build
           run: npm run build
         - name: Deploy
-          uses: SamKirkland/FTP-Deploy-Action@4.0.0
-          with:
-            server: ${{ secrets.FTP_HOST }}
-            username: ${{ secrets.FTP_USERNAME }}
-            password: ${{ secrets.FTP_PASSWORD }}
-            port: ${{ secrets.FTP_PORT }}
-            protocol: ftp
-            local-dir: ./
-            server-dir: ${{ secrets.FTP_SERVERDIR }}
+        uses: SamKirkland/web-deploy@v1
+        with:
+          target-server: ${{ secrets.FTP_HOST }}
+          remote-user: ${{ secrets.FTP_USERNAME }}
+          private-ssh-key: ${{ secrets.SSH_KEY }}
+          destination-path: ${{ secrets.FTP_SERVERDIR }}
+          ssh-port: ${{ secrets.FTP_PORT }}
+          password: ${{ secrets.FTP_PASSWORD }}
