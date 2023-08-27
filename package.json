@@ -6,7 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "start:local": "npm run dev --APP_ENV=local",
+    "deploy:dev": "pm2 startOrRestart ecosystem.config.js --env development",
+    "deploy:prod": "pm2 startOrRestart ecosystem.config.js --env production",
+    "prestart": "npm install && next build"
   },
   "dependencies": {
     "@types/node": "20.5.4",
