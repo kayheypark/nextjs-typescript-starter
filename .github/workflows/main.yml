@@ -5,14 +5,12 @@ on:
 
 jobs:
   test:
-    name: Test on ubuntu-18.04
-    runs-on: ubuntu-lateste
-
-
+    runs-on: ubuntu-latest
     steps:
-      - name: Setup Node
-      - uses: actions/checkout@main
-        with:
-          node-version: '16.18.1'
-      - name: Install Dependencies
-        run: npm install
+        - uses: actions/checkout@main
+        - name: Use Node.js 16.x
+          uses: actions/setup-node@v2
+          with:
+            node-version: '16.18.1'
+        - name: Install Dependencies
+          run: npm install
