@@ -1,7 +1,7 @@
 on:
   push:
     branches:
-    - dev
+    - main
 
 jobs:
   deploy:
@@ -19,7 +19,7 @@ jobs:
         - name: Build
           run: npm run build
         - name: Deploy
-          uses: SamKirkland/FTP-Deploy-Action@3.1.1
+          uses: SamKirkland/FTP-Deploy-Action@4.0.0
           with:
             ftp-server: ${{ secrets.FTP_HOST }}
             ftp-username: ${{ secrets.FTP_USERNAME }}
