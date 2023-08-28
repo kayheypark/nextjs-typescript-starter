@@ -21,8 +21,8 @@ jobs:
         - name: Deploy
           uses: SamKirkland/web-deploy@v1
           with:
-            target-server: ${{ secrets.FTP_HOST }}
-            remote-user: ${{ secrets.FTP_USERNAME }}
+            target-server: ${{ secrets.SSH_HOST }}
+            remote-user: ${{ secrets.SSH_USER }}
             private-ssh-key: ${{ secrets.SSH_KEY }}
-            destination-path: ${{ secrets.FTP_SERVERDIR }}
-            ssh-port: ${{ secrets.FTP_PORT }}
+            destination-path: ${{ secrets.SSH_SSH_DESTINATIONPATH }}
+            ssh-port: ${{ secrets.SSH_PORT }}
