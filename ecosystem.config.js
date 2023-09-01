@@ -8,10 +8,16 @@ module.exports = {
       watch: false,
       args: 'start',
       env_development: {
-        APP_ENV: 'dev'
+        APP_ENV: 'dev',
+        PORT: '3001'
+      },
+      env_staging: {
+        APP_ENV: 'stag',
+        PORT: '3002'
       },
       env_production: {
-        APP_ENV: 'prod'
+        APP_ENV: 'prod',
+        PORT: '3003'
       }
     }
   ]
