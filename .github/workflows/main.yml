@@ -18,11 +18,11 @@ jobs:
           run: npm run lint
         - name: Build
           run: npm run build
-        - name: Deploy
-          uses: SamKirkland/web-deploy@v1
-          with:
-            target-server: ${{ secrets.SSH_HOST }}
-            remote-user: ${{ secrets.SSH_USER }}
-            private-ssh-key: ${{ secrets.SSH_KEY }}
-            destination-path: ${{ secrets.SSH_SSH_DESTINATIONPATH }}
-            ssh-port: ${{ secrets.SSH_PORT }}
+        # - name: Deploy
+        #   uses: SamKirkland/web-deploy@v1
+        #   with:
+        #     target-server: ${{ secrets.SSH_HOST }}
+        #     remote-user: ${{ secrets.SSH_USER }}
+        #     private-ssh-key: ${{ secrets.SSH_KEY }}
+        #     destination-path: ${{ secrets.SSH_SSH_DESTINATIONPATH }}
+        #     ssh-port: ${{ secrets.SSH_PORT }}
