@@ -21,6 +21,7 @@ jobs:
           port: ${{ secrets.SSH_PORT }}
           script: |
             cd /home/web/frontend/prod;
+            rm -f ./git/index.lock;
             git checkout main;
             git fetch;
             git pull;
