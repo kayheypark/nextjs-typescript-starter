@@ -23,6 +23,7 @@ jobs:
             cd /home/web/frontend/dev;
             git fetch;
             git checkout dev;
+            git fetch;
             git pull;
             npm install;
             npm run deploy:dev;
