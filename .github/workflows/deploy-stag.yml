@@ -23,8 +23,9 @@ jobs:
             cd /home/web/frontend/stag;
             git fetch;
             git checkout stag;
-            git fetch;
+            git stash;
             git pull;
+            git stash pop;
             npm install;
             npm run deploy:stag;
 
