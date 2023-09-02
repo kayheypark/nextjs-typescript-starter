@@ -1,0 +1,30 @@
+name: Deply Dev
+
+on:
+  pull_request:
+    types:
+      - closed
+    branches:
+      - dev
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    if: github.event.pull_request.merged == true
+    steps:
+      - name: 💻 SSH 접속 후 git pull 실행
+        uses: appleboy/ssh-action@v1.0.0
+        with:
+          host: ${{ secrets.DEV_SSH_HOST }}
+          username: ${{ secrets.DEV_SSH_USER }}
+          password: ${{ secrets.DEV_SSH_PASSWORD }}
+          port: ${{ secrets.DEV_SSH_PORT }}
+          script: |
+            cd /home/web/frontend/;
+            git checkout dev;
+            git fetch;
+            git pull;
+
+      - name: ✅ 데브 배포성공!
+        run: |
+          echo "'http://dev-www.parkscode.com'에서 QA를 진행해주세요. Staging 환경에 배포를 원할 경우 dev 브랜치를 release 브랜치로 PR merge 해주세요."
