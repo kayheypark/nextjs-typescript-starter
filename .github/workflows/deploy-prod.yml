@@ -23,8 +23,9 @@ jobs:
             cd /home/web/frontend/prod;
             git fetch;
             git checkout main;
-            git fetch;
+            git stash;
             git pull;
+            git stash pop;
             npm install;
             npm run deploy:prod;
 
