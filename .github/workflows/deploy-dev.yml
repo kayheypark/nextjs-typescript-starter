@@ -24,6 +24,8 @@ jobs:
             git checkout dev;
             git fetch;
             git pull;
+            npm install;
+            npm run deploy:dev;
 
       - name: ✅ 데브 배포성공!
         run: |

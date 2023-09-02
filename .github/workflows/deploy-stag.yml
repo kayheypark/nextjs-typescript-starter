@@ -24,6 +24,8 @@ jobs:
             git checkout stag;
             git fetch;
             git pull;
+            npm install;
+            npm run deploy:stag;
 
       - name: ✅ 스테이징 배포성공!
         run: |
