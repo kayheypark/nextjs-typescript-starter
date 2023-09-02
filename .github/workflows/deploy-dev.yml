@@ -20,7 +20,6 @@ jobs:
           password: ${{ secrets.DEV_SSH_PASSWORD }}
           port: ${{ secrets.DEV_SSH_PORT }}
           script: |
-            su -passwd ${{ secrets.SSH_PWD_SU }};
             cd /home/web/frontend/dev;
             git fetch;
             git checkout dev;
