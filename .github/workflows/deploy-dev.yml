@@ -22,11 +22,7 @@ jobs:
           script: |
             cd /home/web/frontend/dev;
             git fetch;
-            git checkout dev;
-            git fetch;
-            git stash;
             git pull;
-            git stash pop;
             npm install;
             npm run deploy:dev;
 
