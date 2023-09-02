@@ -1,0 +1,30 @@
+name: Deply Stag
+
+on:
+  pull_request:
+    types:
+      - closed
+    branches:
+      - stag
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    if: github.event.pull_request.merged == true
+    steps:
+      - name: 💻 SSH 접속 후 git pull 실행
+        uses: appleboy/ssh-action@v1.0.0
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          password: ${{ secrets.SSH_PASSWORD }}
+          port: ${{ secrets.SSH_PORT }}
+          script: |
+            cd /home/web/frontend/stag;
+            git checkout stag;
+            git fetch;
+            git pull;
+
+      - name: ✅ 스테이징 배포성공!
+        run: |
+          echo "'http://stag-www.parkscode.com'에서 확인가능합니다."
