@@ -8,9 +8,9 @@
     "start": "next start",
     "lint": "next lint",
     "start:local": "npm run dev --APP_ENV=local",
-    "deploy:dev": "next build && pm2 startOrRestart ecosystem.config.js --only web-dev --env development",
-    "deploy:stag": "next build && pm2 startOrRestart ecosystem.config.js --only web-stag --env staging",
-    "deploy:prod": "next build && pm2 startOrRestart ecosystem.config.js --only web-prod --env production"
+    "deploy:dev": "next build && pm2 delete web-dev && pm2 startOrRestart ecosystem.config.js --only web-dev --env development",
+    "deploy:stag": "next build && pm2 delete web-stag && pm2 startOrRestart ecosystem.config.js --only web-stag --env staging",
+    "deploy:prod": "next build && pm2 delete web-prod && pm2 startOrRestart ecosystem.config.js --only web-prod --env production"
   },
   "dependencies": {
     "@types/node": "20.5.4",
