@@ -1,4 +1,4 @@
-name: Deply Prod
+name: Deploy Prod
 
 on:
   pull_request:

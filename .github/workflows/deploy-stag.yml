@@ -1,4 +1,4 @@
-name: Deply Stag
+name: Deploy Stag
 
 on:
   pull_request:
